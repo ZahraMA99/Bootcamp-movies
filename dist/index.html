@@ -19,24 +19,26 @@
 
     <!-- script bar -->
     <script id="movies-templete" type="text/x-handlebars-template">
-      <div data-id="{{id}}">
-        {{#each movie}}
+      {{#each movie}}
+        <div data-id="{{id}}">
           <div id="title">
             {{title}}
           </div>
           <div>
-            <img class="image" src="{{posterLink}}" data-src={{posterLink}} />
+            <img id="poster" src="{{posterLink}}" data-src={{posterLink}} />
           </div>
           <div>
             <h5>Year: {{year}}</h5>
           </div>
           <div>
             <ul>
-
+              {{#each rate}}
+              <li>{{this}}</li>
+              {{/each}}
             </ul>
           </div>
-        {{/each}}
-      </div>
+        </div>
+      {{/each}}
     </script>
 
     <!-- scripts import -->

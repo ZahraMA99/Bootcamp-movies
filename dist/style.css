@@ -1,0 +1,8 @@
+body {
+  background-color: gray;
+}
+
+#input-bar{
+    width: 100px;
+    height: 20px;
+}

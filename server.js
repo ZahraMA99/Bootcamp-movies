@@ -27,6 +27,18 @@ app.get("/movies/:title", function (request, response) {
     });
 });
 
+app.get("/movies/:id", function (request, response) {
+  let id = request.params.id;
+  axios
+    .get(`http://www.omdbapi.com/?apikey=b0d39b78&i=${id}`)
+    .then(function (res) {
+      let moviesID = res.data.Search;
+      let M_ID = moviesID.find((movie_id) => movie_id == id);
+      let ratingArray = M_ID.Ratings;
+      response.send(ratingArray);
+    });
+});
+
 const port = 8080;
 app.listen(port, function () {
   console.log(`Running server on port ${port}`);
