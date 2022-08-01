@@ -15,11 +15,16 @@ app.get("/movies/:title", function (request, response) {
   axios
     .get(`http://www.omdbapi.com/?apikey=b0d39b78&s=${title}`)
     .then(function (res) {
-      let movies = res.data;
-      console.log(movies);
-    
+      let movies = res.data.Search;
+      //console.log(movies);
+      let moviesInfo = movies.map((movie) => ({
+        id: movie.imdbID,
+        title: movie.Title,
+        posterLink: movie.Poster,
+        year: movie.Year,
+      }));
+      response.send(moviesInfo);
     });
-    
 });
 
 const port = 8080;
