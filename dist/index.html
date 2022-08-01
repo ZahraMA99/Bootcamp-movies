@@ -8,17 +8,36 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="search-bar">
-      <input id="input-bar" type="text" placeholder="Enter Movie Title" />
-      <button id="search-btn">Search</button>
+    <!-- search bar -->
+    <div>
+      <div id="search-bar">
+        <input id="input-bar" type="text" placeholder="Search Movie" />
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="movie-container"></div>
     </div>
 
-    
+    <!-- script bar -->
+    <script id="movies-templete" type="text/x-handlebars-template">
+      <div data-id="{{id}}">
+        {{#each movie}}
+          <div id="title">
+            {{title}}
+          </div>
+          <div>
+            <img class="image" src="{{posterLink}}" data-src={{posterLink}} />
+          </div>
+          <div>
+            <h5>Year: {{year}}</h5>
+          </div>
+          <div>
+            <ul>
 
-
-
-
-    
+            </ul>
+          </div>
+        {{/each}}
+      </div>
+    </script>
 
     <!-- scripts import -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
