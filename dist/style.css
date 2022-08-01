@@ -2,18 +2,25 @@ body {
   background-color: gray;
 }
 
-#input-bar{
-    width: 300px;
-    height: 25px;
-    border: 10px;
-    border-color: rgb(189, 76, 206);
+#input-bar {
+  width: 300px;
+  height: 25px;
+  border: 10px;
+  border-color: rgb(189, 76, 206);
 }
 
-#search-btn{
-    width: 100px;
-    height: 25px; 
+#search-btn {
+  width: 100px;
+  height: 25px;
 }
-#search-bar{
-    border: 10px;
-    border-color: blueviolet;
+#search-bar {
+  border: 10px;
+  border-color: blueviolet;
+}
+#movie-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
